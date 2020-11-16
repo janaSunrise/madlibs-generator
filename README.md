@@ -14,4 +14,10 @@ I have used following libraries:
 - [ ] Make a GUI Version of this program
 - [ ] Try implementing Markov Chain for generation using machine
 
+## How to run the project?
+
+- Install pipenv using `pip install pipenv`
+- Sync the dependencies: `pipenv sync`
+- Run the project: `pipenv run start`
+
 Made by Sunrit Jana with ❤️
