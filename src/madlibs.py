@@ -3,23 +3,10 @@ from colorama import init, Fore
 
 from random import choice
 
+from .utils import random_madlibs_url, input_phrases
+
+# Set colorama autoreset as True
 init(autoreset=True)
-
-# Define the Input Variables
-min_length = 5
-max_length = 20
-
-random_madlibs_url = f"https://madlibz.herokuapp.com/api/random?minlength={min_length}&maxlength={max_length}"
-
-# Define the input phrases
-input_phrases = [
-    "Enter a {}",
-    "Tell me a {}",
-    "May I have a {}",
-    "Can you think of a {}",
-    "I would like to know a {}",
-    "Do you know a {}"
-]
 
 # Define the list for the Inputs
 inputs = []
@@ -27,12 +14,14 @@ inputs = []
 # Parse the JSON
 data = requests.get(random_madlibs_url).json()
 
+# Extract the data from JSON
 blanks = data["blanks"]
 title = data["title"]
 
 values = data["value"]
 values.pop()
 
+# Show the data by printing them
 print(f"TITLE: {Fore.CYAN} {title}\n")
 
 for blank in blanks:
@@ -43,5 +32,6 @@ for blank in blanks:
 for index in range(len(values) - 1):
    values[index] += inputs[index]
 
+# Print the Paragraph formed
 print()
 print(Fore.GREEN + "".join(values))
