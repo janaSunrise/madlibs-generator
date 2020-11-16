@@ -10,7 +10,7 @@ colorama = "*"
 [dev-packages]
 
 [scripts]
-start = "python madlibs.py"
+start = "python src/madlibs.py"
 
 [requires]
 python_version = "3.8"
