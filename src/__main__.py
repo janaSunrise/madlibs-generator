@@ -21,17 +21,18 @@ title = data["title"]
 values = data["value"]
 values.pop()
 
-# Show the data by printing them
-print(f"TITLE: {Fore.CYAN} {title}\n")
+if __name__ == "__main__":
+    # Show the data by printing them
+    print(f"TITLE: {Fore.CYAN} {title}\n")
 
-for blank in blanks:
-    inputs.append(
-        input(f"{Fore.YELLOW} {choice(input_phrases).format(blank)}: ")
-    )
+    for blank in blanks:
+        inputs.append(
+            input(f"{Fore.YELLOW} {choice(input_phrases).format(blank)}: ")
+        )
 
-for index in range(len(values) - 1):
-   values[index] += inputs[index]
+    for index in range(len(values) - 1):
+        values[index] += inputs[index]
 
-# Print the Paragraph formed
-print()
-print(Fore.GREEN + "".join(values))
+    # Print the Paragraph formed
+    print()
+    print(Fore.GREEN + "".join(values))

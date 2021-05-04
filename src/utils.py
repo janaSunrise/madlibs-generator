@@ -1,6 +1,6 @@
 # Define the Input Variables
 min_length = 5
-max_length = 20
+max_length = 15
 
 random_madlibs_url = f"https://madlibz.herokuapp.com/api/random?minlength={min_length}&maxlength={max_length}"
 
